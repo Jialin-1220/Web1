@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        let score =[
+            [85, 88, 77],
+            [99, 86, 89],
+            [75, 92, 86]
+        ];
+        let name = ['王大同', '林麥可', '張淑芬'];
+        document.write('<table border="1">');
+        document.write('<tr><td>姓名</td><td>國文</td><td>英文</td><td>數學</td><tr>');
+        for (let i = 0; i < name.length; i++) {
+            document.write('<tr><td>' + name[i] + '</td>');
+            for (let n = 0; n < name.length; n++) {
+                document.write('<td>' + score[i][n] + '</td>');
+            }
+            document.write('</tr>');
+        };
+        document.write('</table>');
+    </script>
+</body>
+</html>
