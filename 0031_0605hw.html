@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>0031hw</title>
+    <style>
+        img {
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="all">購物車總額</button>
+        <button onclick="rem(this);">清空購物車</button>
+    </div>
+    <br />
+    <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSidts5R907jQi3UQd4J1o6BRltQRN6geN8Yw&s" />
+        <p>$30</p>
+        <button onclick="adda(this);">加入購物車</button>
+    </div>
+    <br />
+    <div>
+        <img src="https://cs-a.ecimg.tw/items/DBAY10A900HSAQB/001001_1725516647.jpg" />
+        <p>$60</p>
+        <button onclick="addb(this);">加入購物車</button>
+    </div>
+    <script>
+        let a = 30, b = 60;
+        console.log(localStorage.getItem("price"));
+        let total = Number(localStorage.getItem("price")) || 0;
+        const all = document.querySelector("#all");
+        console.log(all.innerHTML);
+        all.innerHTML = "購物車總額：" + total;
+        function adda() {
+            total = total + a;
+            localStorage.setItem("price", total);
+            console.log(total);
+            all.innerHTML = "購物車總額：" + total;
+        }
+        function addb() {
+            total = total + b;
+            localStorage.setItem("price", total);
+            console.log(total);
+            all.innerHTML = "購物車總額：" + total;
+        }
+        function rem() {
+            total = 0;
+            localStorage.setItem("price", total);
+            console.log(total);
+            all.innerHTML = "購物車總額：" + total;
+        }
+    </script>
+</body>
+</html>
